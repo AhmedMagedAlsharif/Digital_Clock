@@ -16,12 +16,12 @@ int main(void)
     SW_Init();
     SCH_Init_T0();
 
-	SCH_Add_Task(&Clock_Update, 0, 1, 500);
+    SCH_Add_Task(&Clock_Update, 0, 1, 500);
     SCH_Add_Task(&SW_Update, 0, 1, 20);
     SCH_Add_Task(&Setting_Task, 0, 1, 250);
     SCH_Add_Task(&SSD_Update, 0, 1, 5);
 
-	SCH_Start();
+    SCH_Start();
     while(1)
     {
         SCH_Dispatch_Tasks();

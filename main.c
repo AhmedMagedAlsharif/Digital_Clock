@@ -1,8 +1,8 @@
 #include "main.h"
 
-static uint8_t Sec = 0;
-static uint8_t Min = 0;
-static uint8_t Hor = 12;
+static int8_t Sec = 0;
+static int8_t Min = 0;
+static int8_t Hor = 12;
 
 static uint8_t Hor_Blink = 0;
 static uint8_t Min_Blink = 0;
@@ -31,12 +31,12 @@ int main(void)
 
 void Clock_Update(void)
 {
-    static uint8_t x = 0;
+    static uint8_t time_temp = 0;
     
-    x++;
-    if(x >= 2)
+    time_temp++;
+    if(time_temp >= 2)
     {
-        x = 0;
+        time_temp = 0;
         Sec++;
         if(Sec > 59)
         {
@@ -122,7 +122,7 @@ void Setting_Task(void)
             else if (DOWN_SW_Pressed == 1)
             {
                 Min--;
-                if(Min < 1)
+                if(Min < 0)
                 {
                     Min = 59;
                 }

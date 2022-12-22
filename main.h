@@ -1,6 +1,6 @@
 /* 
  * File:   main.h
- * Author: ahmed
+ * Author: ENG-Ahmed Maged
  *
  * Created on December 19, 2022, 10:40 AM
  */
